@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Pecadus.MVC4.Models.ProdutoModel>
+<!-- ====================== NAVEGAÇÃO - BREADCRUMB ====================== */ -->
+<nav class="pec-breadcrumb">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <nav>
+                    <ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+                        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="#">Home</a></li>
+                        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">Nome da Categoria</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</nav>
+<!-- ====================== CONTEUDO ====================== */ -->
+<section class="categorias cont-int">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <img class="img-responsive banner-categoria hidden-xs" src="/images/banners/img-banner-categoria.jpg" alt="Frete Grátis">
+            </div>
+            <div class="col-sm-12">
+                <section class="produtos-destaque vitrine-protudos">
+                    <div class="row">
+                        <!-- ITENS -->
+                        @Html.DisplayForModel("_DisplayProduto")
+                    </div><!-- Final Row Produtos-->
+                    <div class="row">
+                        <nav aria-label="Page navigation">
+                            <ul class="pagination">
+                                <li>
+                                    <a href="#" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                </li>
+                                <li><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><a href="#">5</a></li>
+                                <li>
+                                    <a href="#" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</section>

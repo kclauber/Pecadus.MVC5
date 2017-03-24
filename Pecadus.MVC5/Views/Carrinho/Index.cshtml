@@ -1,0 +1,73 @@
+﻿@model IEnumerable<Pecadus.MVC4.Models.ProdutoModel>
+<!-- ====================== NAVEGAÇÃO - BREADCRUMB ====================== */ -->
+<nav class="pec-breadcrumb hidden-xs">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <nav>
+                    <ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+                        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="#">Home</a></li>
+                        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">Carrinho</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</nav>
+<!-- ====================== CONTEUDO PRODUTOS INTERNO ====================== */ -->
+<section class="carrinho cont-int">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Carrinho</h2>
+            </div>
+            <div class="col-md-12">
+                <div class="tabela-carrinho">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th colspan="2">Produto</th>
+                                <th class="hidden-xs">Código</th>
+                                <th class="hidden-xs">Preço Unitário</th>
+                                <th class="hidden-xs">Quantidade</th>
+                                <th class="hidden-xs">Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var produto in Model)
+                            {
+                                <tr>
+                                    <th><a href="#" class="btn btn-remove"><i class="glyphicon glyphicon-remove"></i></a></th>
+                                    <td><img class="img-responsive" src="/images/img-thumb-carrinho.jpg" alt="***Nome do Produto***" title="***Nome do Produto***"></td>
+                                    <td>@produto.Descricao</td>
+                                    <td>@produto.Id</td>
+                                    <td>
+                                        R$ 9.999,00
+                                    </td>
+                                    <td>
+                                        <div class="form-group">
+                                            <label class="sr-only" for="tipoGravacao">Quantidade</label>
+                                            <select class="form-control">
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                            </select>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        R$ 8.888,00
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                    <div class="col-md-12 botoes-carrinho">
+                        <a class="btn btn-primary" href="/" title="Adicionar mais produtos">Adicionar mais produtos</a>
+                        <a class="btn btn-secundary" href="#" title="Concluir Compra" onclick="alert('Direciona ao Pag Seguro')">Concluir Compra</a>
+                    </div>
+                </div><!-- /.im-int -->
+            </div>
+        </div>
+    </div>
+</section>

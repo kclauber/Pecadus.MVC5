@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Pecadus.MVC4.Models.ProdutoModel>
+@{
+    string url;
+}
+@foreach (var produto in Model)
+{
+    url = String.Format("/Produto/{0}/{1}", produto.Id, produto.Descricao);
+
+    <div class="item">
+        <div class="row">
+            <div class="col-md-12">
+                <a href="@url" title="">
+                    <img class="thumbnail img-responsive" src="images/produtos/dest-slider/fantasia-policial.jpg" alt="Kit Fantasia Presidiária Susan Sapeka">
+                </a>
+                <h3>
+                    <a href="@url" title="">Kit Fantasia Presidiária Susan Sapeka</a>
+                </h3>
+                <p>
+                    <a href="@url" title="">
+                        @produto.Descricao
+                    </a>
+                </p>
+                <p>
+                    <span class="glyphicon glyphicon-star star-active" aria-hidden="true"></span>
+                    <span class="glyphicon glyphicon-star star-active" aria-hidden="true"></span>
+                    <span class="glyphicon glyphicon-star star-active" aria-hidden="true"></span>
+                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                    <a href="" title="Avaliações">(01 Avaliação)</a>
+                </p>
+                <p>De: <span>199,00</span></p>
+                <p>Por:</p>
+                <ul>
+                    <li>R$ 55,00</li>
+                </ul>
+                <a href="" title="Detalhes" class="btn btn-primary" aria-label="Left Align" role="button">
+                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span> Detalhes
+                </a>
+                <div class="icon-posi" data-toggle="buttons">
+                    <label class="btn btn-invisible">
+                        <input type="checkbox">
+                        <span class="glyphicon glyphicon-heart" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Adicionar aos Favoritos"></span>
+                    </label>
+                </div>
+                <p>
+                    <a href="@url" title="Adicionar Carrinho" class="btn btn-secundary" aria-label="Left Align" role="button">
+                        <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Adicionar Carrinho
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+}
